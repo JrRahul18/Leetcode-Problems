@@ -17,8 +17,8 @@ class Solution {
     public boolean isEvenOddTree(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
-
         int level = 0;
+        
         while(!q.isEmpty()){
             int size = q.size();
             int prevVal = -1;
