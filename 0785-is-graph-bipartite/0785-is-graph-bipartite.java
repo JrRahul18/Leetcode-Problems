@@ -1,4 +1,5 @@
 class Solution {
+    //Both BFS and DFS
     public static boolean BFSTraversal(int u, int currentSet, HashMap<Integer, List<Integer>> hmap, int[] checkVisited){
         Queue<Integer> q = new LinkedList<>();
         q.add(u);
@@ -48,6 +49,13 @@ class Solution {
             }
         }
         return true;
+        
+        // for(int i=0; i<n; i++){
+        //     if(checkVisited[i] == -1 && BFSTraversal(i, 1, hmap, checkVisited) == false){
+        //         return false;
+        //     }
+        // }
+        // return true;
         
         
     }
