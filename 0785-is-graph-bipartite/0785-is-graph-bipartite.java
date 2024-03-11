@@ -17,6 +17,17 @@ class Solution {
         
         return true;
     }
+    public static boolean DFSTraversal(int u, int currentSet, HashMap<Integer, List<Integer>> hmap, int []checkVisited){
+        checkVisited[u] = currentSet;
+        for(int nbr: hmap.get(u)){
+            if(checkVisited[nbr] == currentSet) return false;
+            if(checkVisited[nbr] == -1){
+                int nextSet = 1-currentSet;
+                if(DFSTraversal(nbr, nextSet, hmap, checkVisited)==false) return false;
+            }
+        }
+        return true;
+    }
     public boolean isBipartite(int[][] graph) {
         int n = graph.length;
         HashMap<Integer, List<Integer>> hmap = new HashMap<>();
@@ -32,7 +43,7 @@ class Solution {
         Arrays.fill(checkVisited, -1);
         
         for(int i=0; i<n; i++){
-            if(checkVisited[i] == -1 && BFSTraversal(i, 1, hmap, checkVisited) == false){
+            if(checkVisited[i] == -1 && DFSTraversal(i, 1, hmap, checkVisited) == false){
                 return false;
             }
         }
