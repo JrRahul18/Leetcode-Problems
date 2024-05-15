@@ -33,22 +33,22 @@ class Solution {
                 return true;
             }
             for(int p =0; p<xTraverse.length; p++){
-//                  if(x+xTraverse[p] >=0 && x+xTraverse[p]<thiefGrid.length && y+yTraverse[p]>=0 && y+yTraverse[p]<thiefGrid[0].length && checkVisited[x+xTraverse[p]][y+yTraverse[p]] != true){
-//                      if(thiefGrid[x+xTraverse[p]][+yTraverse[p]] < mid){
-//                          continue;
-//                      }
-//                      q.add(new Pair(x+xTraverse[p], y+yTraverse[p]));
-//                      checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
+                 if(x+xTraverse[p] >=0 && x+xTraverse[p]<thiefGrid.length && y+yTraverse[p]>=0 && y+yTraverse[p]<thiefGrid[0].length && checkVisited[x+xTraverse[p]][y+yTraverse[p]] != true){
+                     if(thiefGrid[x+xTraverse[p]][y+yTraverse[p]] < mid){
+                         continue;
+                     }
+                     q.add(new Pair(x+xTraverse[p], y+yTraverse[p]));
+                     checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
                      
-//                  }
-                int newX = x+xTraverse[p];
-                int newY = y+yTraverse[p];
-                if(newX>=0 && newX<thiefGrid.length && newY>=0 && newY<thiefGrid.length && checkVisited[newX][newY] != true){
-                    if(thiefGrid[newX][newY] < mid) continue;
+                 }
+//                 int newX = x+xTraverse[p];
+//                 int newY = y+yTraverse[p];
+//                 if(newX>=0 && newX<thiefGrid.length && newY>=0 && newY<thiefGrid.length && checkVisited[newX][newY] != true){
+//                     if(thiefGrid[newX][newY] < mid) continue;
                     
-                    q.add(new Pair(newX, newY));
-                    checkVisited[newX][newY] = true;
-                }
+//                     q.add(new Pair(newX, newY));
+//                     checkVisited[newX][newY] = true;
+//                 }
             }
         }
         return false;
