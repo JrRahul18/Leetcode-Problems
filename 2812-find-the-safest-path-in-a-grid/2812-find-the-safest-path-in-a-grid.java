@@ -41,14 +41,6 @@ class Solution {
                      checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
                      
                  }
-//                 int newX = x+xTraverse[p];
-//                 int newY = y+yTraverse[p];
-//                 if(newX>=0 && newX<thiefGrid.length && newY>=0 && newY<thiefGrid.length && checkVisited[newX][newY] != true){
-//                     if(thiefGrid[newX][newY] < mid) continue;
-                    
-//                     q.add(new Pair(newX, newY));
-//                     checkVisited[newX][newY] = true;
-//                 }
             }
         }
         return false;
@@ -87,17 +79,17 @@ class Solution {
                 thiefGrid[x][y] = count;
                 
                 for(int p=0; p<xTraverse.length; p++){
-                    // if(x+xTraverse[p] >=0 && x+xTraverse[p]<grid.size() && y+yTraverse[p]>=0 && y+yTraverse[p]<grid.size() && checkVisited[x+xTraverse[p]][y+yTraverse[p]] == false){
-                    //     q.add(new Pair(x+xTraverse[p], y+yTraverse[p]));
-                    //     checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
-                    // }
-                    int newX = x+xTraverse[p];
-                    int newY = y+yTraverse[p];
-                    if(newX<0 || newX>=grid.size() || newY<0 || newY>=grid.size() || checkVisited[newX][newY] == true){
-                        continue;
+                    if(x+xTraverse[p] >=0 && x+xTraverse[p]<grid.size() && y+yTraverse[p]>=0 && y+yTraverse[p]<grid.size() && checkVisited[x+xTraverse[p]][y+yTraverse[p]] == false){
+                        q.add(new Pair(x+xTraverse[p], y+yTraverse[p]));
+                        checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
                     }
-                    q.add(new Pair(newX, newY));
-                    checkVisited[newX][newY] = true;
+                    // int newX = x+xTraverse[p];
+                    // int newY = y+yTraverse[p];
+                    // if(newX<0 || newX>=grid.size() || newY<0 || newY>=grid.size() || checkVisited[newX][newY] == true){
+                    //     continue;
+                    // }
+                    // q.add(new Pair(newX, newY));
+                    // checkVisited[newX][newY] = true;
                 }
             }
             count++;
