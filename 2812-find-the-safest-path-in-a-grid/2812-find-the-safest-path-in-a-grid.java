@@ -43,7 +43,7 @@ class Solution {
 //                  }
                 int newX = x+xTraverse[p];
                 int newY = y+yTraverse[p];
-                if(newX>=0 && newX<thiefGrid.length && newY>=0 && newY<thiefGrid.length && checkVisited[newX][newY] == false){
+                if(newX>=0 && newX<thiefGrid.length && newY>=0 && newY<thiefGrid.length && checkVisited[newX][newY] != true){
                     if(thiefGrid[newX][newY] < mid) continue;
                     
                     q.add(new Pair(newX, newY));
