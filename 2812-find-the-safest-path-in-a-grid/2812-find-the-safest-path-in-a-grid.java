@@ -83,13 +83,6 @@ class Solution {
                         q.add(new Pair(x+xTraverse[p], y+yTraverse[p]));
                         checkVisited[x+xTraverse[p]][y+yTraverse[p]] = true;
                     }
-                    // int newX = x+xTraverse[p];
-                    // int newY = y+yTraverse[p];
-                    // if(newX<0 || newX>=grid.size() || newY<0 || newY>=grid.size() || checkVisited[newX][newY] == true){
-                    //     continue;
-                    // }
-                    // q.add(new Pair(newX, newY));
-                    // checkVisited[newX][newY] = true;
                 }
             }
             count++;
