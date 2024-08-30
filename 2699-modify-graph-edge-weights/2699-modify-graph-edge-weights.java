@@ -70,14 +70,14 @@ class Solution {
         
         for(int edge[]: edges){
             if(edge[2] == -1){
-                // if(check == true){
-                //     edge[2] = Integer.MAX_VALUE;
-                // }
-                // else{
-                //     edge[2] = 1;
-                // }
+                if(check == true){
+                    edge[2] = target+1;
+                }
+                else{
+                    edge[2] = 1;
+                }
                 
-                edge[2] = check ? (int)2e9 : 1;
+                // edge[2] = check ? Integer.MAX_VALUE : 1;
                 
                 if(check == false){
                     long temp = dijkstra(n, edges, source, destination);
