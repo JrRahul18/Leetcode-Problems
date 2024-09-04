@@ -1,6 +1,7 @@
 class Solution {
     static int[] xArray = {0, 1, 0, -1};
     static int[] yArray = {1, 0, -1, 0};
+    
     public int robotSim(int[] commands, int[][] obstacles) {
         int finalAns = 0;
         
