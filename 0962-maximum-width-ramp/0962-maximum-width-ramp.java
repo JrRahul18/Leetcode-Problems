@@ -12,7 +12,6 @@ class Solution {
         
         int i=0, j=0;
         
-        int ans = nums[0];
         while(j<maxRight.length){
             if(maxRight[j]>= nums[i]){
                 finalAns = Math.max(finalAns, j-i);
