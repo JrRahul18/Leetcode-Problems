@@ -18,12 +18,8 @@ class Solution {
         for(int[] c: classes){
             double c0 = (double)c[0];
             double c1 = (double)c[1];
+            double newPassRatio = ((c0+1)/(c1+1)) - (c0/c1);
             
-            double currentPassed = (double) (c0/c1);
-            double newPassed = (double) ((c0+1)/(c1+1));
-            
-            double newPassRatio = ((c0+1)/(c1+1)) - (c0/c1) ;
-            System.out.println(newPassRatio);
             pq.add(new Tuple((double) c[0], (double) c[1], newPassRatio));
         }
         
@@ -46,7 +42,6 @@ class Solution {
         while(!pq.isEmpty()){
             Tuple temp = pq.peek();
             pq.poll();
-            System.out.println( temp.passDiff +" "+ temp.passed + " " + temp.total);
             finalAns += temp.passed/temp.total;
         }
         return finalAns/classes.length;
