@@ -4,12 +4,9 @@ class Solution {
         HashMap<Character, Integer> hmap = new HashMap<>();
         int i=0, j=0;
         
-        while(j<s.length()){
-
-            
+        while(j<s.length()){      
             if(hmap.containsKey(s.charAt(j))){
                 int idx = hmap.get(s.charAt(j));
-                // i=idx+1;
                 for(int k=i; k<idx+1; k++){
                     hmap.remove(s.charAt(k));
                 }
